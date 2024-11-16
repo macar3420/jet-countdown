@@ -1,0 +1,136 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(31, 122, 158);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+}
+
+
+
+.scene .rocket {
+    position: relative;
+    animation: animate 0.2s ease infinite;;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform:  translateY(-2px);
+    }
+    50%
+    {
+        transform: translate(2px);
+    }
+}
+
+.scene .rocket::before{
+    content: '';
+    position: absolute;
+    bottom: 34em;
+    left: 115%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 15px;
+    background: linear-gradient(black, transparent);
+    
+}
+.scene .rocket::after{
+    content: '';
+    position: absolute;
+    bottom: 34em;
+    left: 115%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 15px;
+    background: linear-gradient(black, transparent);
+    filter: blur(10px);
+}
+.scene i {
+    position: absolute;
+    background: rgb(59, 59, 59);
+    animation: animateStars linear infinite;
+}
+@keyframes animateStars
+{
+    0%
+    {
+      transform: translateX(0);
+    }
+    100%
+    {
+      transform: translateX(100px);
+    }
+}
+.go {
+    margin-top: 3em;
+    margin-left: 10em;
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    padding: 1em;
+    border: 2px solid black;
+    box-shadow: 0 0 35px black;
+    font-family: sans-serif;
+}
+.comp {
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0 0 55px blue;
+}
+.untilN_minutes {
+    color: black;
+    padding: 0.5em 0;
+    font-weight: bold;
+    font-size: 3em;
+}
+.untilN_days {
+    color: black;
+    padding: 0.5em 0;
+    font-weight: bold;
+    font-size: 3em;
+}
+.untilN_seconds {
+    color: black;
+    padding: 0.5em 0;
+    font-weight: bold;
+    font-size: 3em;
+}
+.untilN_hours {
+    color: black;
+    padding: 0.5em 0;
+    font-weight: bold;
+    font-size: 3em;
+}
+.unit {
+    font-size: 1.5em;
+    padding-bottom: 1em;
+    font-weight: bold;
+}
+.theDate {
+    grid-column: span 4;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 0.2em;
+}
+.home {
+    grid-column: span 4;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 0.2em;
+    box-shadow: 0 0 80px blue;
+    
+    
+    
+}

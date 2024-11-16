@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>MY ROCKET</title>
+</head>
+<body>
+    <div class="scene">
+        <div class="rocket">
+
+            <img src="./pngimg.com - jet_fighter_PNG126.png">
+            <img src="./fire2.png">
+
+            <div class="go" id="countDown">
+                <div class="comp">
+                    <div class="untilN_days">00</div>
+                    <div class="unit">Days</div>
+                </div>
+        
+                <div class="comp">
+                    <div class="untilN_hours">00</div>
+                    <div class="unit">Hours</div>
+                </div>
+        
+                <div class="comp">
+                    <div class="untilN_minutes">00</div>
+                    <div class="unit">Minutes</div>
+                </div>
+        
+                <div class="comp">
+                    <div class="untilN_seconds">00</div>
+                    <div class="unit">Seconds</div>
+                </div>
+                <div class="theDate"></div>
+                <div class="home"></div>
+            </div>
+        </div>
+    </div>
+ 
+    <script>
+        function stars() {
+            let count = 20;
+            let scene = document.querySelector(".scene");
+            let i = 0;
+            while(i < count) {
+                let star = document.createElement('i');
+                let x = Math.floor(Math.random() * window.innerHeight*2);
+                let y = Math.floor(Math.random() * window.innerWidth/4);
+
+                let duration = Math.random() * 1;
+                let h = Math.random() * 1   ;
+
+                star.style.left = 0 + x + 'px';
+                star.style.top = 10 + y + 'px';
+                
+                star.style.width = 200 + 'px';
+                star.style.height = h + 'px';
+                star.style.animationDuration =  duration + 's';
+
+                scene.appendChild(star);
+                i++;
+            }
+        }
+        stars();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/plugin/duration.min.js" integrity="sha512-t0b2NyBypSms8nA81pldWo0mXbfMotsdYgvs4awmbi/GU/25YBNLnXj+I9DAMV7WGZ8+z8wtRolX7zSF2LN8UQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./days.js"></script>
+</body>
+</html>
